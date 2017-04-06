@@ -1,0 +1,5 @@
+.tern-project
+.\(dD)ocker*
+.\npm-debug.log
+.tern-project
+node_build

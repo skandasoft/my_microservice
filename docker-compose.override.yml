@@ -1,0 +1,20 @@
+version: '2'
+services:
+  node1:
+    # build: .
+    volumes:
+      - .:/usr/src/app
+    environment:
+     - NODE_PATH=/usr/lib/node_modules/my-microservice/node_modules
+
+  nginx:
+    # image: nginx:alpine
+    # environment:
+    #   - nginx_conf=nginx.prod.conf
+    # env_file:
+    #   - nginx.env
+    # build:
+    #   args:
+    #     nginx_conf: nginx.conf
+    volumes:
+      - .:/nodejs:ro

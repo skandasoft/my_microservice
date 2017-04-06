@@ -1,0 +1,31 @@
+version: '2'
+services:
+  node1:
+    # image: express-alpine:0.1
+    build: .
+    ports:
+     - "8080"
+    environment:
+       - PORT=8080
+    depends_on:
+      - redis
+    #   - nginx
+  nginx:
+    # image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - nginx_log:/var/log/nginx
+    # volumes_from:
+    #   - node1: ro
+    #   # - nodejs: /nodejs
+    depends_on:
+      - node1
+  redis:
+    image: redis:3.2.8-alpine
+volumes:
+    nodejs:
+    nginx_log:

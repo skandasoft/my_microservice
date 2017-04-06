@@ -1,0 +1,15 @@
+version: '2'
+services:
+  node1:
+    command: ["nodemon", "./bin/www"]
+    build:
+      context: .
+      dockerfile: ./prod/Dockerfile
+
+  nginx:
+    # image: nginx:alpine
+    build:
+      context: .
+      dockerfile: ./prod/Dockerfile-nginx
+      # args:
+      #   nginx_conf: ./prod/nginx.conf
