@@ -15,8 +15,6 @@
       "load": "",
       "modules": ""
     },
-    "openui5": {},
-   "node-express": {},
     "requirejs": {
       "baseURL": "",
       "paths": "",
