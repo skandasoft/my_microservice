@@ -17,4 +17,4 @@ services:
     #   args:
     #     nginx_conf: nginx.conf
     volumes:
-      - .:/nodejs:ro
+      - ./public/:/var/www/html/public:ro
